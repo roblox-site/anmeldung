@@ -1,31 +1,31 @@
-<!-- indext-!>
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Willkommen</title>
-  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <!-- Cookie-Overlay -->
   <div id="cookie-overlay" class="overlay">
     <div class="cookie-box">
-      <h2>Cookies</h2>
+      <h2>🍪 Cookies</h2>
       <p>
-        Diese Website verwendet Cookies, um Informationen über dein… 
-        <a href="https://MeineWebsite.de/Datenschutz" target="_blank">zur Datenschutzerklärung</a>
+        Diese Website verwendet Cookies, um Informationen über dein Nutzungsverhalten zu sammeln. Mehr dazu in der
+        <a href="https://MeineWebsite.de/Datenschutz" target="_blank">Datenschutzerklärung</a>.
       </p>
-      <button id="accept-cookies">Alle akzeptieren</button>
+      <button id="accept-cookies" class="btn btn-primary">Alle akzeptieren</button>
     </div>
   </div>
 
   <!-- Name-Eingabe -->
   <div id="name-container" class="container hidden">
     <h1>Wie heißt du?</h1>
-    <input type="text" id="name-input" placeholder="Dein Name">
-    <button id="submit-name">Weiter</button>
-    <p id="loading" class="hidden">Laden...</p>
+    <input type="text" id="name-input" placeholder="Dein Name" />
+    <button id="submit-name" class="btn btn-success">Weiter</button>
+    <p id="loading" class="hidden">⏳ Wird geladen...</p>
   </div>
 
   <script src="script.js"></script>
