@@ -1,4 +1,4 @@
-// script.js
+// script.j
 document.addEventListener('DOMContentLoaded', () => {
   const overlay       = document.getElementById('cookie-overlay');
   const acceptBtn     = document.getElementById('accept-cookies');
