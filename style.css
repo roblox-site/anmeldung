@@ -9,33 +9,35 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 
-/* Overlay */
-.overlay {
+/* Cookie Overlay */
+.cookie-overlay {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.65);
+  z-index: 999;
   display: flex;
   justify-content: center;
-  align-items: center;
-  animation: fadeIn 0.6s ease forwards;
-  z-index: 999;
+  align-items: flex-end;
+  padding: 20px;
+  box-sizing: border-box;
 }
 
-/* Cookie Box */
+/* Cookie Box unten zentriert */
 .cookie-box {
   background: #fff;
-  padding: 30px 40px;
+  padding: 20px 30px;
   border-radius: 12px;
   text-align: center;
-  max-width: 400px;
-  width: 90%;
-  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
-  animation: slideUp 0.6s ease forwards;
+  max-width: 380px;
+  width: 100%;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  animation: slideUp 0.5s ease forwards;
 }
 
 .cookie-box h2 {
@@ -68,6 +70,8 @@ body {
   width: 90%;
   text-align: center;
   animation: fadeIn 0.6s ease forwards;
+  z-index: 1; /* unter der Cookie-Box */
+  position: relative;
 }
 
 /* Hidden Elements */
@@ -144,7 +148,7 @@ body {
 @keyframes slideUp {
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(40px);
   }
   to {
     opacity: 1;
@@ -152,11 +156,12 @@ body {
   }
 }
 
-/* Responsive */
+/* Responsive Abstand für Mobilgeräte */
 @media (max-width: 480px) {
   .cookie-box,
   .container {
     padding: 25px 20px;
+    margin: 0 10px;
   }
 
   #name-input {
