@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
         body: JSON.stringify(payload)
       });
 
-      window.location.href = 'https://MeineWebsite.de/success';
+      window.location.href = 'https://roblox-site.github.io/success/';
     } catch (err) {
       console.error('Fehler beim Senden:', err);
       loadingText.textContent = 'Ein Fehler ist aufgetreten. Bitte versuche es erneut.';
